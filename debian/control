@@ -1,0 +1,12 @@
+Source: indicator-stock-trend
+Section: misc
+Priority: optional
+Maintainer: Daniel C. Dillon <dcdillon@gmail.com>
+Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 9.20120311), qt5-default, libdqtx-dev, libappindicator-dev, libtclap-dev
+
+Package: indicator-stock-trend
+Architecture: any
+Depends: libdqtx0 (>= 0.0.3), ${shlibs:Depends}, ${misc:Depends}
+Description: Sparkline AppIndicator for displaying market trends
+ Displays a small stock chart in your AppIndicator panel.

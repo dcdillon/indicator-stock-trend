@@ -1,0 +1,25 @@
+rm -rf deb
+rm -rf *.tar.gz
+
+DEBVERSION=`head -n1 debian/changelog | sed -r 's/.*\((.*)\).*/\1/'`
+qmake && make -j dist
+
+mkdir deb
+cp *.tar.gz deb
+
+pushd deb
+
+PACKAGE=`ls *.tar.gz | grep -Po '^[A-Za-z-]+'`
+DEBPACKAGE=`echo $PACKAGE | sed -r 's/([A-Z])/-\1/g' | tr '[:upper:]' '[:lower:]'`
+VERSION=`ls *.tar.gz | grep -Po '[0-9]+\.[0-9]+\.[0-9]+'`
+mv ${PACKAGE}${VERSION}.tar.gz ${DEBPACKAGE}_${VERSION}.orig.tar.gz
+tar -xzf ${DEBPACKAGE}_${VERSION}.orig.tar.gz
+mv ${PACKAGE}${VERSION} ${DEBPACKAGE}-${VERSION}
+pushd ${DEBPACKAGE}-${VERSION}
+cp -r ../../debian .
+
+debuild -S -sa -uc -us -rfakeroot
+
+popd
+
+popd
