@@ -54,6 +54,6 @@ indicator-stock-trend (0.0.1-2) vivid; urgency=medium
 
 indicator-stock-trend (0.0.1-1) vivid; urgency=medium
 
-  * Initial release. (Closes: #XXXXXX)
+  * Initial release
 
  -- Daniel C. Dillon <dcdillon@gmail.com>  Fri, 11 Sep 2015 13:53:53 -0500

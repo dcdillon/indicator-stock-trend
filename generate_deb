@@ -1,5 +1,16 @@
 #!/bin/bash
 
+OPTIONS=""
+
+while getopts "S" opt; do
+    case $opt in
+        S)
+            OPTIONS="-S"
+            shift
+            ;;
+    esac
+done
+
 rm -rf deb.*
 rm -rf *.tar.gz
 
@@ -20,7 +31,7 @@ for DIST in $*; do
     pushd ${DEBPACKAGE}-${VERSION}
     cp -r ../../debian.$DIST ./debian
 
-    debuild -S -sa -uc -us -rfakeroot
+    debuild $OPTIONS -sa -uc -us -rfakeroot
 
     popd
 

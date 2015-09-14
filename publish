@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./generate_deb $*
+./generate_deb -S $*
 
 for DIST in $*; do
     pushd deb.$DIST
