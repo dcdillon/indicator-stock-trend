@@ -4,7 +4,7 @@ isEmpty(PREFIX) {
 
 TEMPLATE = app
 TARGET = indicator-stock-trend
-VERSION = 0.0.9
+VERSION = 0.0.10
 
 INCLUDEPATH += .
 

@@ -1,9 +1,0 @@
-#!/usr/bin/make -f
-%:
-	dh $@
-
-override_dh_auto_build:
-	qmake QMAKE_CXX=g++-4.9 PREFIX=/usr && make
-
-override_dh_auto_clean:
-	[ ! -f Makefile ] || $(MAKE) distclean

@@ -1,3 +1,9 @@
+indicator-stock-trend (0.0.10-1~vivid) vivid; urgency=medium
+
+  * Fixing build on launchpad
+
+ -- Daniel C. Dillon <dcdillon@gmail.com>  Mon, 21 Sep 2015 12:37:53 -0500
+
 indicator-stock-trend (0.0.9-1~vivid) vivid; urgency=medium
 
   * Working with build depends
